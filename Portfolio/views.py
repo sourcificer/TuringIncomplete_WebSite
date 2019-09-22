@@ -1,7 +1,4 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
-from django.http import HttpResponse, HttpResponseRedirect
-from .forms import ClientContactForm
 #SendGrid API libraries
 import os
 from sendgrid import SendGridAPIClient

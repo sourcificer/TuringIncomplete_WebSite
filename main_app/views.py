@@ -9,30 +9,31 @@ from sendgrid.helpers.mail import Mail
 
 def home_page(request):
     if request.method == 'GET':
-        form = ClientContactForm()
+        pass
     else:
-        form = ClientContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
+        print(request.POST)
+        subject = request.POST.get('subject')
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
 
-            try:
-                mail_message = Mail(
-                    from_email=email,
-                    to_emails='tIncomplete19@protonmail.com',
-                    subject=subject,
-                    html_content=message
-                )
-                print(os.environ.get('SENDGRID_API_KEY'))
-                sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-                response = sg.send(mail_message)
-                print(response.status_code)
-                print(response.body)
-                print(response.headers)
-                return redirect('home_page')
-            except Exception as e:
-                print(e.message)
+        print(message)
+
+        try:
+            mail_message = Mail(
+                from_email=email,
+                to_emails='tIncomplete19@protonmail.com',
+                subject=subject,
+                html_content="from: " + name + " Message: " + message
+            )
+            print(os.environ.get('SENDGRID_API_KEY'))
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(mail_message)
+            print(response.status_code)
+            print(response.body)
+            print(response.headers)
             return redirect('home_page')
-    return render(request, 'index.html', {'form': form})
+        except Exception as e:
+            print(e.message)
+        return redirect('home_page')
+    return render(request, 'index.html')

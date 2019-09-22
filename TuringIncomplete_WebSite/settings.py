@@ -124,12 +124,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-SENDGRID_API_KEY = os.getenv('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')
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 
 

@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ClientContactForm
-from django.core.mail import send_mail, BadHeaderError, EmailMessage
-from django.template.loader import get_template
+#SendGrid API libraries
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
-# Create your views here.
 def home_page(request):
-
     if request.method == 'GET':
         form = ClientContactForm()
     else:
@@ -17,26 +17,22 @@ def home_page(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            template = get_template('contact_template.txt')
-            context = {
-                'name': name,
-                'email': email,
-                'subject': subject,
-                'message': message
-            }
-            content = template.render(context)
 
             try:
-                email_console = EmailMessage(
-                    "Contact form submitted",
-                    content,
-                    "TuringIncomplete"+' ',["test@gmail.com"],
-                    headers={"Reply-to": email}
+                mail_message = Mail(
+                    from_email=email,
+                    to_emails='tIncomplete19@protonmail.com',
+                    subject=subject,
+                    html_content=message
                 )
-                email_console.send()
+                print(os.environ.get('SENDGRID_API_KEY'))
+                sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+                response = sg.send(mail_message)
+                print(response.status_code)
+                print(response.body)
+                print(response.headers)
                 return redirect('home_page')
-            except BadHeaderError:
-                return HttpResponse('Invalid Header Found')
+            except Exception as e:
+                print(e.message)
             return redirect('home_page')
-
-    return render(request,'index.html',{'form':form})
+    return render(request, 'index.html', {'form': form})

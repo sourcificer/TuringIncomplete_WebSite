@@ -45,8 +45,11 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Services</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#pricing_plans">Pricing</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -86,36 +89,33 @@
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-credit-card fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto
-            quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Payment</h4>
+          <p class="text-muted">Online payment services like epay, paytm, paypal, UPI.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-file fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto
-            quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Custom Management</h4>
+          <p class="text-muted">Tool to help you create, manage and publish digital content.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-mobile fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto
-            quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Progressive Web App</h4>
+          <p class="text-muted">Made using modern web capabilities to deliver an app-like experience to users.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Grid -->
-  <section class="bg-light page-section" id="portfolio">
+  <!-- <section class="bg-light page-section" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -210,14 +210,16 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <section class="bg-light page-section">
+  <!--Pricing Plans-->
+  <section class="bg-light page-section" id="pricing_plans">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Pricing Plans</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <!--Authentication-->
+          <h3 class="section-subheading text-muted">Authentication</h3>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -226,64 +228,204 @@
             <table class="table table-striped">
               <thead class="thead-inverse">
                 <tr>
-                  <th class="h4 py-4" style="width: 40%">Features</th>
-                  <th class="h4 py-4 font-weight-light">Pixel Lite</th>
-                  <th class="h4 py-4">Pixel PRO</th>
+                  <th class="h4 py-4" style="width: 40%">Type</th>
+                  <th class="h4 py-4 font-weight-light">Price</th>
+                  <!-- <th class="h4 py-4">Pixel PRO</th> -->
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="option h6 font-weight-light">Components</td>
-                  <td class="font-weight-light">100 components</td>
-                  <td class="font-weight-light">1000+ components</td>
+                  <td class="option h6 font-weight-light">Social(google,facebook)</td>
+                  <td class="font-weight-light">4,000INR</td>
                 </tr>
                 <tr>
-                  <td class="option h6 font-weight-light">Plugins</td>
-                  <td class="font-weight-light">3 plugins</td>
-                  <td class="font-weight-light">10 plugins</td>
-                </tr>
-                <tr>
-                  <td class="option h6 font-weight-light">Sections</td>
-                  <td><i class="fas fa-times text-danger"></i></td>
-                  <td class="font-weight-light">50+ sections</td>
-                </tr>
-                <tr>
-                  <td class="option h6 font-weight-light">Pages</td>
-                  <td class="font-weight-light">3 pages</td>
-                  <td class="font-weight-light">25+ pages</td>
-                </tr>
-                <tr>
-                  <td class="option h6 font-weight-light">SASS Files</td>
-                  <td><i class="fas fa-times text-danger"></i></td>
-                  <td><i class="fa fa-check text-success"></i></td>
-                </tr>
-                <tr>
-                  <td class="option h6 font-weight-light">Documentation +</td>
-                  <td><i class="fas fa-times text-danger"></i></td>
-                  <td><i class="fa fa-check text-success"></i></td>
-                </tr>
-                <tr>
-                  <td class="option h6 font-weight-light">Tech Support</td>
-                  <td><i class="fa fa-check text-success"></i></td>
-                  <td><i class="fa fa-check text-success"></i></td>
+                  <td class="option h6 font-weight-light">Custom(email verification)</td>
+                  <td class="font-weight-light">5,000INR</td>
                 </tr>
               </tbody>
-              <tfoot class="thead-inverse">
-                <tr>
-                  <th class="w-25"></th>
-                  <th class="py-4"><a href="https://themesberg.com/product/pixel-lite-free-bootstrap-4-ui-kit"
-                      role="button" target="_blank" class="btn btn-sm btn-outline-dark font-weight-bold">Free
-                      download</a></th>
-                  <th class="py-4"><a href="https://themesberg.com/preview/pixel-pro/html/components/all.html"
-                      role="button" target="_blank" class="btn btn-sm btn-primary font-weight-bold animate-up-2">Upgrade
-                      to PRO</a></th>
-                </tr>
-              </tfoot>
             </table>
           </div>
         </div>
       </div>
     </div>
+
+    <!--ePay-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"></h2>
+          <h3 class="section-subheading text-muted">e-Pay</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-inverse">
+                <tr>
+                  <th class="h4 py-4" style="width: 40%">Type</th>
+                  <th class="h4 py-4 font-weight-light">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="option h6 font-weight-light">Stripe</td>
+                  <td class="font-weight-light">2,000 - 3,000INR</td>
+                </tr>
+                <tr>
+                  <td class="option h6 font-weight-light">Without Stripe</td>
+                  <td class="font-weight-light">4,000 - 5,000INR</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--CMS-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"></h2>
+          <h3 class="section-subheading text-muted">Custom Management System</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td class="option h6 font-weight-light">Price</td>
+                  <td class="font-weight-light">5,000INR</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--perPage-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"></h2>
+          <h3 class="section-subheading text-muted">Per Page</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-inverse">
+                <tr>
+                  <th class="h4 py-4" style="width: 40%">Type</th>
+                  <th class="h4 py-4 font-weight-light">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="option h6 font-weight-light">Unresponsive</td>
+                  <td class="font-weight-light">1,000INR</td>
+                </tr>
+                <tr>
+                  <td class="option h6 font-weight-light">Responsive</td>
+                  <td class="font-weight-light">2,000INR</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--pWA-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"></h2>
+          <h3 class="section-subheading text-muted">Progressive Web App</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-inverse">
+                  <tr>
+                  </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td class="option h6 font-weight-light">Price</td>
+                  <td class="font-weight-light">8,000INR</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--comment-->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase"></h2>
+            <h3 class="section-subheading text-muted">Comment</h3>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="thead-inverse">
+                  <tr>
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="option h6 font-weight-light">Comment</td>
+                    <td class="font-weight-light">3,000 - 4,000INR</td>
+                  </tr>
+                  <!-- <tr>
+                    <td class="option h6 font-weight-light">Without Stripe</td>
+                    <td class="font-weight-light">4,000 - 5,000INR</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!--ratingSystem-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"></h2>
+          <h3 class="section-subheading text-muted">Rating System</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td class="option h6 font-weight-light">Price</td>
+                  <td class="font-weight-light">2,000INR</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- About -->
@@ -492,7 +634,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted"></h3>
         </div>
       </div>
       <div class="row">
@@ -546,25 +688,25 @@
           <span class="copyright">Copyright &copy; TuringIncomplete 2019</span>
         </div>
         <div class="col-md-4">
-          <!-- <ul class="list-inline social-buttons">
+          <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <!-- <a href="#">
                 <i class="fab fa-twitter"></i>
-              </a>
+              </a> -->
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <!-- <a href="#">
                 <i class="fab fa-facebook-f"></i>
-              </a>
+              </a> -->
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <!-- <a href="#">
                 <i class="fab fa-linkedin-in"></i>
-              </a>
+              </a> -->
             </li>
-          </ul> -->
+          </ul>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <ul class="list-inline quicklinks">
             <li class="list-inline-item">
               <a href="#">Privacy Policy</a>
@@ -573,7 +715,7 @@
               <a href="#">Terms of Use</a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>
@@ -676,114 +818,6 @@
                   <li>Date: January 2017</li>
                   <li>Client: Finish</li>
                   <li>Category: Identity</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 4 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                  blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia
-                  expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Lines</li>
-                  <li>Category: Branding</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 5 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                  blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia
-                  expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Southwest</li>
-                  <li>Category: Website Design</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 6 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-                  blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia
-                  expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Window</li>
-                  <li>Category: Photography</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>

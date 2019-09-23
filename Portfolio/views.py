@@ -28,6 +28,6 @@ class Portfolio(View):
             print(response.headers)
             return redirect('home_page')
         except Exception as e:
-            print(e.message)
+            print(str(e))
         
         return render(request,self.template_name)

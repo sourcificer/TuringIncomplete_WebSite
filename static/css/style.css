@@ -2505,6 +2505,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   list-style: none;
 }
 /*Pricing Cards*/
+.d-block {
+  display: block !important;
+}
 
 .card {
   position: relative;

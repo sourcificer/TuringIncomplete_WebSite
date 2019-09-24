@@ -43,13 +43,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
           </li> -->
           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#pricing_plans">Pricing</a>
@@ -76,13 +76,28 @@
     </div>
   </header>
 
+  
+  <!-- About -->
+  <section class="page-section" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">About</h2>
+          <h3 class="section-subheading text-muted">For ease of access and for a more productive way of life.</h3>
+          <p class="lead text-center">We are a group of people who all whom have a passion for solving everyday problems and a passion for computer science so we have always thought of making this our profession and this website is the first step towards it. <span class='text-warning'><u>TuringIncomplete</u></span> is our official website where interested clients can view services offered by us along with our pricing plans and contact us for any further information.</p>
+        </div>
+      </div>
+    </div> 
+  </section>
+
+
   <!-- Services -->
   <section class="page-section" id="services">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">Some of the implementations we offer</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -236,287 +251,359 @@
     </div>
   </section> -->
 
-   <!-- About -->
-  <section class="page-section" id="about">
+  <!--Pricing-->
+  {% if context.country == 'IN' %}
+  <section class="bg-light page-section" id="pricing_plans">
+
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">For ease of access and for a more productive way of life.</h3>
-          <p class="lead text-center">We are a group of people who all whom have a passion for solving everyday problems and a passion for computer science so we have always thought of making this our profession and this website is the first step towards it. <span class='text-warning'><u>TuringIncomplete</u></span> is our official website where interested clients can view services offered by us along with our pricing plans and contact us for any further information.</p>
-        </div>
+      <div class="mb-6 text-center">
+        <h1 class="font-weight-light mb-4">Pricing Plans</h1>
+        <p class="lead">Charges are open to discussion and <u>may vary</u> depeneding on specification</p>
       </div>
-      <!-- <!-- <div class="row">
-        <div class="col-lg-12">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/1.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Our Humble Beginnings</h4>
+
+      <div class="card-columns">
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">₹</span>4k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong> Authentication</strong> feature to let user login to your application</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Custom</strong> Design your own Authentication </li>
+                    <li class="list-group-item"><strong>Social Authentication</strong> Login with Social Networking website </li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                <!-- End Content -->
+              </div>
+  
+          </div>
+
+          <div class="pricing-card">
+                <div class="card shadow-soft border-light p-4">
+                  <!-- Header -->
+                  <header class="card-header border-bottom bg-white text-center">
+                    <span class="d-block">
+                      <span class="display-1 text-primary font-weight-bold">
+                        <span class="align-top font-medium">₹</span>5k
+                      </span>
+                      <span class="text-light font-small"></span>
+                    </span>
+                  </header>
+                  <!-- End Header -->
+                  <!-- Content -->
+                  <div class="card-body">
+                    <p><strong>Online Payment</strong> Let your users pay through your application</p>
+                    <ul class="list-group mb-4">
+                      <li class="list-group-item"><strong>Banking Solution</strong> Payment using Credit/Debit</li>
+                      <li class="list-group-item"><strong>Online Vendors</strong> Payment using Paypal/Paytm etc.</li>
+                    </ul>
+                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                        class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
+                  </div>
+                  <!-- End Content -->
                 </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/2.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">An Agency is Born</h4>
+    
+          </div>
+
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">₹</span>5k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Content Management System</strong> Create, edit and publish content with ease using GUI</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Blogs</strong> Create stunning personal & professinal blogs</li>
+                    <li class="list-group-item"><strong></strong></li>
+                    <li class="list-group-item"><strong></strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                <!-- End Content -->
+              </div>
+  
+          </div>
+
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">₹</span>8k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong> Progressive Web Apps</strong> convert your website into a mobile app</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Platforms</strong> Will support iOS & Android</li>
+                    <li class="list-group-item"><strong>Ease </strong> Directly install a website into your phone</li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
+                <!-- End Content -->
               </div>
-            </li>
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/3.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
+  
+          </div>
+          
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">₹</span>3k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Comment Section</strong> let your users comment, share and interact with other people on your platform</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Share, Comment, Reply</strong> Increase your platform's user intractivity</li>
+                    <li class="list-group-item"><strong></strong></li>
+                    <li class="list-group-item"><strong></strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                <!-- End Content -->
+              </div>
+  
+          </div>
+          
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">₹</span>2k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Rating System</strong> let your users rate your content and we will improve thier recommendation feed</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Custom recommendation</strong> users can rate your content and get a better recommendation feed</li>
+                    <li class="list-group-item"><strong> </strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
+                <!-- End Content -->
               </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/4.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Phase Two Expansion</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>Be Part
-                  <br>Of Our
-                  <br>Story!</h4>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-    </div> 
+  
+          </div>
+      </div>
+    </div>
   </section>
 
-  <!--Pricing Plans-->
-  
+
+
+  {% else %}
   <section class="bg-light page-section" id="pricing_plans">
-  <div class="container">
-      <h2 class="section-heading text-center text-uppercase">Pricing Plans</h2>
-      <p class="lead text-center">Charges are open to discussion and <u>may vary </u> depeneding on specification</p>
-      <!--GRID ROW-->
-      <div class="row mt-4">
-        <!--FIRST CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body info-color text-center">
-                  <h2 class="section-subheading text-muted">Authentication</h3>
-                <!-- <i class="fab fa-twitter white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-              <div class="row">
-                <div class="col-md-6 border-right text-center font-weight-bold">
-                  <span class="align-top font-medium"> Social: ₹</span>4k
-                </div>
-                <div class="col-md-6 border-left text-center font-weight-bold">
-                  <span class="align-top font-medium"> email: ₹</span>5k
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 border-right text-center font-weight-bold">
-
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
-                  </div>
-                  <div class="col-md-6 border-left text-center font-weight-bold">
-
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <!--FIRST CARD-->
-        <!--SECOND CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body info-color text-center red darken-2">
-                <h2 class="section-subheading text-muted">e-Pay</h3>
-                <!-- <i class="fab fa-youtube white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-              <div class="row">
-                <div class="col-md-6 border-right text-center font-weight-bold">
-                  <span class="align-top font-medium"> Stripe: ₹</span>2k - 3k
-
-                </div>
-                <div class="col-md-6 border-left text-center font-weight-bold">
-                  <span class="align-top font-small"> Non-Stripe: ₹</span>4k - 5k
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 border-right text-center font-weight-bold">
-
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
-                  </div>
-                  <div class="col-md-6 border-left text-center font-weight-bold">
-
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <!--SECOND CARD-->
-        <!--THIRD CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body blue darken-4 text-center">
-                <h2 class="section-subheading text-muted">CMS</h3>
-                <!-- <i class="fab fa-facebook-square white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-                <div class="text-center font-weight-bold">
-                  <span class="align-top font-medium">₹</span>5k
-                </div>
-                <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                  class="fas fa-cart mr-1"></span>Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <!--THIRD CARD-->
+    <div class="container">
+      <div class="mb-6 text-center">
+        <h1 class="font-weight-light mb-4">Pricing Plans</h1>
+        <p class="lead">Charges are open to discussion and <u>may vary</u> depeneding on specification</p>
       </div>
-      <!--GRID ROW-->
+
+      <div class="card-columns">
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">$</span>4k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong> Authentication</strong> feature to let user login to your application</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Custom</strong> Design your own Authentication </li>
+                    <li class="list-group-item"><strong>Social Authentication</strong> Login with Social Networking website </li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
+                </div>
+                <!-- End Content -->
+              </div>
   
-      <!--GRID ROW-->
-      <div class="row mt-4">
-        <!--FIRST CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body blue text-center">
-                <h2 class="section-subheading text-muted">Per Page</h3>
-                <!-- <i class="fab fa-behance-square white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-              <div class="row">
-                <div class="col-md-6 border-right text-center font-weight-bold">
-                  <span class="align-top font-medium"> Unresponsive: ₹</span>1k  
-                </div>
-                <div class="col-md-6 border-left text-center font-weight-bold">
-                  <span class="align-top font-medium"> Responsive: ₹</span>2k 
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 border-right text-center font-weight-bold">
+          </div>
 
+          <div class="pricing-card">
+                <div class="card shadow-soft border-light p-4">
+                  <!-- Header -->
+                  <header class="card-header border-bottom bg-white text-center">
+                    <span class="d-block">
+                      <span class="display-1 text-primary font-weight-bold">
+                        <span class="align-top font-medium">$</span>5k
+                      </span>
+                      <span class="text-light font-small"></span>
+                    </span>
+                  </header>
+                  <!-- End Header -->
+                  <!-- Content -->
+                  <div class="card-body">
+                    <p><strong>Online Payment</strong> Let your users pay through your application</p>
+                    <ul class="list-group mb-4">
+                      <li class="list-group-item"><strong>Banking Solution</strong> Payment using Credit/Debit</li>
+                      <li class="list-group-item"><strong>Online Vendors</strong> Payment using Paypal/Paytm etc.</li>
+                    </ul>
                     <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
+                        class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                   </div>
-                  <div class="col-md-6 border-left text-center font-weight-bold">
+                  <!-- End Content -->
+                </div>
+    
+          </div>
 
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart mr-1"></span>Add to Cart</button>
-                  </div>
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">$</span>5k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Content Management System</strong> Create, edit and publish content with ease using GUI</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Blogs</strong> Create stunning personal & professinal blogs</li>
+                    <li class="list-group-item"><strong></strong></li>
+                    <li class="list-group-item"><strong></strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
-            </div>
-          </div>
-        </div>
-        <!--FIRST CARD-->
-        <!--SECOND CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body blue darken-1 text-center">
-                <h2 class="section-subheading text-muted">PWA</h3>
-                <!-- <i class="fab fa-css3 white-text fa-3x"></i> -->
+                <!-- End Content -->
               </div>
-            </a>
-            <div class="card-footer">
-                <div class="text-center font-weight-bold">
-                  <span class="align-top font-medium">₹</span>8k
-                </div>
-                <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                  class="fas fa-cart mr-1"></span>Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <!--SECOND CARD-->
-        <!--THIRD CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body pink lighten-1 text-center">
-                <h2 class="section-subheading text-muted">Comments</h3>
-                <!-- <i class="fab fa-dribbble white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-                <div class="text-center font-weight-bold">
-                  <span class="align-top font-medium">₹</span>3k - 4k
-                </div>
-                <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                  class="fas fa-cart mr-1"></span>Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <!--THIRD CARD-->
-      </div>
-      <!--GRID ROW-->
   
-      <!--GRID ROW-->
-      <div class="row mt-4">
-        <!--FIRST CARD-->
-        <div class="col-md-4">
-          <div class="card">
-            <a href="#" class="waves-light">
-              <div class="card-body blue darken-2 text-center">
-                <h2 class="section-subheading text-muted">Rating System</h3>
-                <!-- <i class="fab fa-dropbox white-text fa-3x"></i> -->
-              </div>
-            </a>
-            <div class="card-footer">
-                <div class="text-center font-weight-bold">
-                  <span class="align-top font-medium">₹</span>2k
-                </div>
-                <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                  class="fas fa-cart mr-1"></span>Add to Cart</button>
-            </div>
           </div>
-        </div>
-        <!--FIRST CARD-->
+
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">$</span>8k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong> Progressive Web Apps</strong> convert your website into a mobile app</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Platforms</strong> Will support iOS & Android</li>
+                    <li class="list-group-item"><strong>Ease </strong> Directly install a website into your phone</li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
+                </div>
+                <!-- End Content -->
+              </div>
+  
+          </div>
+          
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">$</span>3k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Comment Section</strong> let your users comment, share and interact with other people on your platform</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Share, Comment, Reply</strong> Increase your platform's user intractivity</li>
+                    <li class="list-group-item"><strong></strong></li>
+                    <li class="list-group-item"><strong></strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
+                </div>
+                <!-- End Content -->
+              </div>
+  
+          </div>
+          
+          <div class="pricing-card">
+              <div class="card shadow-soft border-light p-4">
+                <!-- Header -->
+                <header class="card-header border-bottom bg-white text-center">
+                  <span class="d-block">
+                    <span class="display-1 text-primary font-weight-bold">
+                      <span class="align-top font-medium">$</span>2k
+                    </span>
+                    <span class="text-light font-small"></span>
+                  </span>
+                </header>
+                <!-- End Header -->
+                <!-- Content -->
+                <div class="card-body">
+                  <p><strong>Rating System</strong> let your users rate your content and we will improve thier recommendation feed</p>
+                  <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Custom recommendation</strong> users can rate your content and get a better recommendation feed</li>
+                    <li class="list-group-item"><strong> </strong></li>
+                  </ul>
+                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
+                </div>
+                <!-- End Content -->
+              </div>
+  
+          </div>
       </div>
-      <!--GRID ROW-->
     </div>
   </section>
   
@@ -699,6 +786,14 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+  {% endif %}
+
 
 
 

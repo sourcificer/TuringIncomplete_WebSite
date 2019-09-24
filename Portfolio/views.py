@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.contrib.gis.geoip2 import GeoIP2
 import json
 from urllib.request import urlopen
 # SendGrid API libraries
@@ -20,8 +19,16 @@ class Portfolio(View):
         return country
 
     def get(self, request, *args, **kwargs):
+        country = self.locationChecker(request)
+
+        if country == 'IN':
+            currency = '₹'
+        else:
+            currency = '$'
+
         context = {
-            'country': self.locationChecker(request)
+            'country': self.locationChecker(request),
+            'currency': currency
         }
         return render(request, self.template_name, {'context':context})
 

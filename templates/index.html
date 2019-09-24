@@ -252,7 +252,6 @@
   </section> -->
 
   <!--Pricing-->
-  {% if context.country == 'IN' %}
   <section class="bg-light page-section" id="pricing_plans">
 
     <div class="container">
@@ -268,7 +267,7 @@
                 <header class="card-header border-bottom bg-white text-center">
                   <span class="d-block">
                     <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">₹</span>4k
+                      <span class="align-top font-medium">{{ context.currency }}</span>4k
                     </span>
                     <span class="text-light font-small"></span>
                   </span>
@@ -295,7 +294,7 @@
                   <header class="card-header border-bottom bg-white text-center">
                     <span class="d-block">
                       <span class="display-1 text-primary font-weight-bold">
-                        <span class="align-top font-medium">₹</span>5k
+                        <span class="align-top font-medium">{{ context.currency }}</span>5k
                       </span>
                       <span class="text-light font-small"></span>
                     </span>
@@ -322,7 +321,7 @@
                 <header class="card-header border-bottom bg-white text-center">
                   <span class="d-block">
                     <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">₹</span>5k
+                      <span class="align-top font-medium">{{ context.currency }}</span>5k
                     </span>
                     <span class="text-light font-small"></span>
                   </span>
@@ -350,7 +349,7 @@
                 <header class="card-header border-bottom bg-white text-center">
                   <span class="d-block">
                     <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">₹</span>8k
+                      <span class="align-top font-medium">{{ context.currency }}</span>8k
                     </span>
                     <span class="text-light font-small"></span>
                   </span>
@@ -377,7 +376,7 @@
                 <header class="card-header border-bottom bg-white text-center">
                   <span class="d-block">
                     <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">₹</span>3k
+                      <span class="align-top font-medium">{{ context.currency }}</span>3k
                     </span>
                     <span class="text-light font-small"></span>
                   </span>
@@ -405,7 +404,7 @@
                 <header class="card-header border-bottom bg-white text-center">
                   <span class="d-block">
                     <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">₹</span>2k
+                      <span class="align-top font-medium">{{ context.currency }}</span>2k
                     </span>
                     <span class="text-light font-small"></span>
                   </span>
@@ -428,191 +427,6 @@
       </div>
     </div>
   </section>
-
-
-
-  {% else %}
-  <section class="bg-light page-section" id="pricing_plans">
-    <div class="container">
-      <div class="mb-6 text-center">
-        <h1 class="font-weight-light mb-4">Pricing Plans</h1>
-        <p class="lead">Charges are open to discussion and <u>may vary</u> depeneding on specification</p>
-      </div>
-
-      <div class="card-columns">
-          <div class="pricing-card">
-              <div class="card shadow-soft border-light p-4">
-                <!-- Header -->
-                <header class="card-header border-bottom bg-white text-center">
-                  <span class="d-block">
-                    <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">$</span>4k
-                    </span>
-                    <span class="text-light font-small"></span>
-                  </span>
-                </header>
-                <!-- End Header -->
-                <!-- Content -->
-                <div class="card-body">
-                  <p><strong> Authentication</strong> feature to let user login to your application</p>
-                  <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Custom</strong> Design your own Authentication </li>
-                    <li class="list-group-item"><strong>Social Authentication</strong> Login with Social Networking website </li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                </div>
-                <!-- End Content -->
-              </div>
-  
-          </div>
-
-          <div class="pricing-card">
-                <div class="card shadow-soft border-light p-4">
-                  <!-- Header -->
-                  <header class="card-header border-bottom bg-white text-center">
-                    <span class="d-block">
-                      <span class="display-1 text-primary font-weight-bold">
-                        <span class="align-top font-medium">$</span>5k
-                      </span>
-                      <span class="text-light font-small"></span>
-                    </span>
-                  </header>
-                  <!-- End Header -->
-                  <!-- Content -->
-                  <div class="card-body">
-                    <p><strong>Online Payment</strong> Let your users pay through your application</p>
-                    <ul class="list-group mb-4">
-                      <li class="list-group-item"><strong>Banking Solution</strong> Payment using Credit/Debit</li>
-                      <li class="list-group-item"><strong>Online Vendors</strong> Payment using Paypal/Paytm etc.</li>
-                    </ul>
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                        class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                  </div>
-                  <!-- End Content -->
-                </div>
-    
-          </div>
-
-          <div class="pricing-card">
-              <div class="card shadow-soft border-light p-4">
-                <!-- Header -->
-                <header class="card-header border-bottom bg-white text-center">
-                  <span class="d-block">
-                    <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">$</span>5k
-                    </span>
-                    <span class="text-light font-small"></span>
-                  </span>
-                </header>
-                <!-- End Header -->
-                <!-- Content -->
-                <div class="card-body">
-                  <p><strong>Content Management System</strong> Create, edit and publish content with ease using GUI</p>
-                  <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Blogs</strong> Create stunning personal & professinal blogs</li>
-                    <li class="list-group-item"><strong></strong></li>
-                    <li class="list-group-item"><strong></strong></li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                </div>
-                <!-- End Content -->
-              </div>
-  
-          </div>
-
-          <div class="pricing-card">
-              <div class="card shadow-soft border-light p-4">
-                <!-- Header -->
-                <header class="card-header border-bottom bg-white text-center">
-                  <span class="d-block">
-                    <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">$</span>8k
-                    </span>
-                    <span class="text-light font-small"></span>
-                  </span>
-                </header>
-                <!-- End Header -->
-                <!-- Content -->
-                <div class="card-body">
-                  <p><strong> Progressive Web Apps</strong> convert your website into a mobile app</p>
-                  <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Platforms</strong> Will support iOS & Android</li>
-                    <li class="list-group-item"><strong>Ease </strong> Directly install a website into your phone</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                </div>
-                <!-- End Content -->
-              </div>
-  
-          </div>
-          
-          <div class="pricing-card">
-              <div class="card shadow-soft border-light p-4">
-                <!-- Header -->
-                <header class="card-header border-bottom bg-white text-center">
-                  <span class="d-block">
-                    <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">$</span>3k
-                    </span>
-                    <span class="text-light font-small"></span>
-                  </span>
-                </header>
-                <!-- End Header -->
-                <!-- Content -->
-                <div class="card-body">
-                  <p><strong>Comment Section</strong> let your users comment, share and interact with other people on your platform</p>
-                  <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Share, Comment, Reply</strong> Increase your platform's user intractivity</li>
-                    <li class="list-group-item"><strong></strong></li>
-                    <li class="list-group-item"><strong></strong></li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                </div>
-                <!-- End Content -->
-              </div>
-  
-          </div>
-          
-          <div class="pricing-card">
-              <div class="card shadow-soft border-light p-4">
-                <!-- Header -->
-                <header class="card-header border-bottom bg-white text-center">
-                  <span class="d-block">
-                    <span class="display-1 text-primary font-weight-bold">
-                      <span class="align-top font-medium">$</span>2k
-                    </span>
-                    <span class="text-light font-small"></span>
-                  </span>
-                </header>
-                <!-- End Header -->
-                <!-- Content -->
-                <div class="card-body">
-                  <p><strong>Rating System</strong> let your users rate your content and we will improve thier recommendation feed</p>
-                  <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Custom recommendation</strong> users can rate your content and get a better recommendation feed</li>
-                    <li class="list-group-item"><strong> </strong></li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
-                      class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
-                </div>
-                <!-- End Content -->
-              </div>
-  
-          </div>
-      </div>
-    </div>
-  </section>
-
-
-  {% endif %}
-
-
-
-
 
 
   <!-- About -->

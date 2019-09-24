@@ -37,8 +37,15 @@ class Portfolio(View):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
+        country = self.locationChecker(request)
+        if country == 'IN':
+            currency = '₹'
+        else:
+            currency = '$'
+
         context = {
-            'country': self.locationChecker(request)
+            'country': self.locationChecker(request),
+            'currency': currency
         }
 
         try:

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 import json
 from urllib.request import urlopen
+from django.http import HttpResponse
 # SendGrid API libraries
 import os
 from sendgrid import SendGridAPIClient
@@ -48,6 +49,7 @@ class Portfolio(View):
             'currency': currency
         }
 
+        response_data = {}
         try:
             mail_message = Mail(
                 from_email=email,
@@ -55,10 +57,13 @@ class Portfolio(View):
                 subject=subject,
                 html_content="from: " + name + " Message: " + message
             )
-            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            response = sg.send(mail_message)
-            print(response.headers)
+            # sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            # response = sg.send(mail_message)
+            # print(response.headers)
+            response_data['result'] = "SUCCESS!!"
+            return HttpResponse(json.dumps(response_data),content_type="application/json")
         except Exception as e:
             print(str(e))
+            return HttpResponse(json.dumps({"nothing to see": "this isn't happening"}),content_type="application/json")
 
         return render(request, self.template_name,{'context':context})

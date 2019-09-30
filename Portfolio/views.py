@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.views import View
 import json
 from urllib.request import urlopen
@@ -61,9 +61,9 @@ class Portfolio(View):
             # response = sg.send(mail_message)
             # print(response.headers)
             response_data['result'] = "SUCCESS!!"
-            return HttpResponse(json.dumps(response_data),content_type="application/json")
+            # return render(json.dumps(response_data),content_type="application/json")
         except Exception as e:
             print(str(e))
-            return HttpResponse(json.dumps({"nothing to see": "this isn't happening"}),content_type="application/json")
+            # return render(json.dumps({"nothing to see": "this isn't happening"}),content_type="application/json")
 
         return render(request, self.template_name,{'context':context})

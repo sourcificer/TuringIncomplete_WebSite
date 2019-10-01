@@ -23,6 +23,9 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
+  
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <link href="{% static 'css/agency.css' %}" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
@@ -640,9 +643,8 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <form method="POST" id="contactForm">
+          <form id="contactForm" method="POST">
             {% csrf_token %}
-            <!-- <form id="contactForm" name="sentMessage" novalidate="novalidate"> -->
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -680,19 +682,22 @@
     </div>
   </section>
 
-  <!-- <script>
-  alert("JSTAG")
-  // event.preventDefault();
-  function create_contact() {
-    $ajax({
-      url = "",
-      type:"POST",
-      data: {
-        subject = $("#subject").val(),
-        email = $("#email").val(),
-        name = $("#name").val(),
-        message = $("#message").val(),
-      },
+  <script>
+  $("#contactForm").on("submit", function(event){
+    event.preventDefault();
+
+    var contact_form = {
+      message: $("#message").val(),
+        email: $("#email").val(),
+        subject: $("#subject").val(),
+        name: $("#name").val(),
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+    }
+    
+    $.ajax({
+      url: "{% url 'send_message' %}",
+      data: contact_form,
+      dataType: 'json',
 
       success: function(json) {
         $("#subject").val("");
@@ -703,18 +708,15 @@
       },
       
       error:function(xhr,errmsg,err) {
-        $("#contactForm").prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button>Oops! Error Occured!</div>")
+        $("#contactForm").prepend(
+          "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button>Oops! Error Occured!</div>")
       }
 
     })
-  }
-  $("#contactForm").on(".submit",function(event) {
-    alert("THIS WORKED");
-    event.preventDefault();
-    alert("SUCCESS");
-    create_contact();
   })
-  </script> -->
+  
+  
+  </script>
 
   <!-- Footer -->
   <footer class="footer">
@@ -868,17 +870,7 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
   <!-- Plugin JavaScript -->
-  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
-  <!-- Contact form JavaScript -->
-  <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
-  <script src="{% static 'js/contact_me.js' %}"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'js/agency.min.js' %}"></script>
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 

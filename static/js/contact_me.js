@@ -1,5 +1,4 @@
 $(function() {
-
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true,
     submitError: function($form, event, errors) {
@@ -10,7 +9,7 @@ $(function() {
       // get values from FORM
       var name = $("input#name").val();
       var email = $("input#email").val();
-      var phone = $("input#phone").val();
+      var phone = $("input#subject").val();
       var message = $("textarea#message").val();
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
@@ -20,17 +19,21 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "././mail/contact_me.php",
+        url: "./mail/contact_me.php",   //./mail/contact_me.php
         type: "POST",
         data: {
           name: name,
           phone: phone,
           email: email,
-          message: message
+          message: message, 
         },
-        cache: false,
-        success: function() {
+        // cache: false,
+        success: function(json) {
           // Success message
+          $("input#subject").val("");
+          $("input#email").val("");
+          $("input#name").val("");
+          $("textarea#message").val("");
           $('#success').html("<div class='alert alert-success'>");
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");

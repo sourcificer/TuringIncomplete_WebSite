@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.views import View
-from django.contrib.gis.geoip2 import GeoIP2
 import json
 from urllib.request import urlopen
+from django.http import HttpResponse
 # SendGrid API libraries
 import os
 from sendgrid import SendGridAPIClient
@@ -20,8 +20,16 @@ class Portfolio(View):
         return country
 
     def get(self, request, *args, **kwargs):
+        country = self.locationChecker(request)
+
+        if country == 'IN':
+            currency = '₹'
+        else:
+            currency = '$'
+
         context = {
-            'country': self.locationChecker(request)
+            'country': self.locationChecker(request),
+            'currency': currency
         }
         return render(request, self.template_name, {'context':context})
 
@@ -30,10 +38,18 @@ class Portfolio(View):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
+        country = self.locationChecker(request)
+        if country == 'IN':
+            currency = '₹'
+        else:
+            currency = '$'
+
         context = {
-            'country': self.locationChecker(request)
+            'country': self.locationChecker(request),
+            'currency': currency
         }
 
+        response_data = {}
         try:
             mail_message = Mail(
                 from_email=email,
@@ -41,10 +57,13 @@ class Portfolio(View):
                 subject=subject,
                 html_content="from: " + name + " Message: " + message
             )
-            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            response = sg.send(mail_message)
-            print(response.headers)
+            # sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            # response = sg.send(mail_message)
+            # print(response.headers)
+            response_data['result'] = "SUCCESS!!"
+            # return render(json.dumps(response_data),content_type="application/json")
         except Exception as e:
             print(str(e))
+            # return render(json.dumps({"nothing to see": "this isn't happening"}),content_type="application/json")
 
         return render(request, self.template_name,{'context':context})

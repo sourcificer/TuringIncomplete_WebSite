@@ -2,11 +2,17 @@ from django.shortcuts import render, redirect, render_to_response
 from django.views import View
 import json
 from urllib.request import urlopen
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 # SendGrid API libraries
 import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+
+
+def send_message(request):
+    return JsonResponse({
+        "done": True
+    })
 
 
 class Portfolio(View):

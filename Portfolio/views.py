@@ -10,6 +10,27 @@ from sendgrid.helpers.mail import Mail
 
 
 def send_message(request):
+    subject = request.POST.get('subject')
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    message = request.POST.get('message')
+    response_data = {}
+    try:
+        mail_message = Mail(
+            from_email=email,
+            to_emails='tIncomplete19@protonmail.com',
+            subject=subject,
+            html_content="from: " + name + " Message: " + message
+        )
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        response = sg.send(mail_message)
+        print(response.headers)
+        response_data['result'] = "SUCCESS!!"
+        print(response_data)
+    except Exception as e:
+        print("[+] EXCEPTION: ")
+        print(str(e))
+    
     return JsonResponse({
         "done": True
     })
@@ -40,10 +61,6 @@ class Portfolio(View):
         return render(request, self.template_name, {'context':context})
 
     def post(self, request, *args, **kwargs):
-        subject = request.POST.get('subject')
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
         country = self.locationChecker(request)
         if country == 'IN':
             currency = '₹'
@@ -54,22 +71,5 @@ class Portfolio(View):
             'country': self.locationChecker(request),
             'currency': currency
         }
-
-        response_data = {}
-        try:
-            mail_message = Mail(
-                from_email=email,
-                to_emails='tIncomplete19@protonmail.com',
-                subject=subject,
-                html_content="from: " + name + " Message: " + message
-            )
-            # sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-            # response = sg.send(mail_message)
-            # print(response.headers)
-            response_data['result'] = "SUCCESS!!"
-            # return render(json.dumps(response_data),content_type="application/json")
-        except Exception as e:
-            print(str(e))
-            # return render(json.dumps({"nothing to see": "this isn't happening"}),content_type="application/json")
 
         return render(request, self.template_name,{'context':context})

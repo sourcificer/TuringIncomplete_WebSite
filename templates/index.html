@@ -281,7 +281,7 @@
                     <li class="list-group-item"><strong>Custom</strong> Design your own Authentication </li>
                     <li class="list-group-item"><strong>Social Authentication</strong> Login with Social Networking website </li>
                   </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                  <button type="button" onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                       class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
                 <!-- End Content -->
@@ -308,7 +308,7 @@
                       <li class="list-group-item"><strong>Banking Solution</strong> Payment using Credit/Debit</li>
                       <li class="list-group-item"><strong>Online Vendors</strong> Payment using Paypal/Paytm etc.</li>
                     </ul>
-                    <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                    <button type="button"  onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                         class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                   </div>
                   <!-- End Content -->
@@ -336,7 +336,7 @@
                     <li class="list-group-item"><strong></strong></li>
                     <li class="list-group-item"><strong></strong></li>
                   </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                  <button type="button"  onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                       class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
                 <!-- End Content -->
@@ -363,7 +363,7 @@
                     <li class="list-group-item"><strong>Platforms</strong> Will support iOS & Android</li>
                     <li class="list-group-item"><strong>Ease </strong> Directly install a website into your phone</li>
                   </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                  <button type="button"  onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                       class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
                 <!-- End Content -->
@@ -391,7 +391,7 @@
                     <li class="list-group-item"><strong></strong></li>
                     <li class="list-group-item"><strong></strong></li>
                   </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                  <button type="button"  onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                       class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
                 <!-- End Content -->
@@ -418,7 +418,7 @@
                     <li class="list-group-item"><strong>Custom recommendation</strong> users can rate your content and get a better recommendation feed</li>
                     <li class="list-group-item"><strong> </strong></li>
                   </ul>
-                  <button type="button" class="btn btn-outline-primary btn-block" tabindex="0"><span
+                  <button type="button"  onclick="addToCart(this);" class="btn btn-outline-primary btn-block" tabindex="0"><span
                       class="fas fa-cart-plus mr-3"></span>Add to Cart</button>
                 </div>
                 <!-- End Content -->
@@ -681,6 +681,17 @@
   </section>
 
   <script>
+  function addToCart(element) {
+    var cartIcon = $(element).children().eq(0);
+    var textCart = $(element);
+
+    if(cartIcon.hasClass("fas fa-cart-plus mr-3")) { // check if the Icon is of a cart
+      textCart.html('<span class="fas fa-check"></span>Added to Cart');
+    }else{
+      textCart.html('<span class="fas fa-cart-plus mr-3"></span>Add to Cart');
+    }
+  }
+
   $("#contactForm").on("submit", function(event){
     event.preventDefault();
 
@@ -707,7 +718,7 @@
       
       },
       
-      error:function(xhr,errmsg,err) {
+      error: function(xhr,errmsg,err) {
         $("#success").prepend(
           "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button>Oops! Error Occured!</div>")
       }

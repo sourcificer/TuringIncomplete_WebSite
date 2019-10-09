@@ -9,31 +9,38 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 
-def send_message(request):
-    subject = request.POST.get('subject')
-    name = request.POST.get('name')
-    email = request.POST.get('email')
-    message = request.POST.get('message')
-    response_data = {}
-    try:
+class SendMessageAjaxView(View):
+
+    def send_message(self):
         mail_message = Mail(
             from_email=email,
             to_emails='tIncomplete19@protonmail.com',
             subject=subject,
             html_content="from: " + name + " Message: " + message
         )
-        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-        response = sg.send(mail_message)
-        print(response.headers)
-        response_data['result'] = "SUCCESS!!"
-        print(response_data)
-    except Exception as e:
-        print("[+] EXCEPTION: ")
-        print(str(e))
-    
-    return JsonResponse({
-        "done": True
-    })
+        sendGrid = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+        response = sendGrid.send(mail_message)
+        self.response_data['result'] = "SUCCESS!!"
+
+    def post(self, request, *args, **kwargs):
+        self.subject = request.POST.get('subject')
+        self.name = request.POST.get('name')
+        self.email = request.POST.get('email')
+        self.message = request.POST.get('message')
+        self.response_data = {}
+
+        try:
+            self.send_message()
+        except ConnectionError as ex:
+            jsonResponse = JsonResponse({
+                "error": str(ex)
+            })
+            jsonResponse.status_code = 500
+            return jsonResponse
+
+        return JsonResponse({
+            "done": True
+        })
 
 
 class Portfolio(View):
@@ -72,4 +79,6 @@ class Portfolio(View):
             'currency': currency
         }
 
-        return render(request, self.template_name,{'context':context})
+        return render(request, self.template_name, {
+            'context': context
+        })

@@ -10,13 +10,12 @@ from sendgrid.helpers.mail import Mail
 
 
 def send_message(request):
-<<<<<<< HEAD
-=======
     subject = request.POST.get('subject')
     name = request.POST.get('name')
     email = request.POST.get('email')
     message = request.POST.get('message')
     response_data = {}
+
     try:
         mail_message = Mail(
             from_email=email,
@@ -26,14 +25,14 @@ def send_message(request):
         )
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
         response = sg.send(mail_message)
-        print(response.headers)
         response_data['result'] = "SUCCESS!!"
-        print(response_data)
-    except Exception as e:
-        print("[+] EXCEPTION: ")
-        print(str(e))
-    
->>>>>>> upstream/development
+    except ConnectionError as ex:
+        response = JsonResponse({
+            "error": str(ex)
+        })
+        response.status_code = 500
+        return response
+
     return JsonResponse({
         "done": True
     })

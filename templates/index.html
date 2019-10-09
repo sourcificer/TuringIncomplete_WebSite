@@ -23,9 +23,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <link href="{% static 'css/agency.css' %}" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
@@ -697,18 +695,20 @@
     $.ajax({
       url: "{% url 'send_message' %}",
       data: contact_form,
+      type: 'POST',
       dataType: 'json',
 
       success: function(json) {
-        $("#subject").val("");
-        $("#email").val("");
-        $("#name").val("");
-        $("#message").val("");
-        $('#contactForm').prepend("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button>" + json.result +"</div>");
+        $('#contactForm').trigger("reset");
+        $('#success').prepend("<div id='statusPrompt' class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button>" + "Form successfully submitted" +"</div>");
+        setTimeout(function() {
+          $("#statusPrompt").hide()
+        },5000)  
+      
       },
       
       error:function(xhr,errmsg,err) {
-        $("#contactForm").prepend(
+        $("#success").prepend(
           "<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button>Oops! Error Occured!</div>")
       }
 
@@ -871,6 +871,10 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <!-- Plugin JavaScript -->
+
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/agency.min.js' %}"></script>
+
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 

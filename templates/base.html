@@ -61,11 +61,19 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+                <a class="btn btn-outline-warning text-uppercase js-scroll-trigger"
+                    href="{% url 'cart_view'%}"
+                    style="margin-top:10px;"
+                >
+                <span class="fas fa-cart-plus mr-3"></span>
+                Cart</a>
+            </li>
         </ul>
       </div>
     </div>
   </nav>
-
+      
   
   {% block content %}
       
